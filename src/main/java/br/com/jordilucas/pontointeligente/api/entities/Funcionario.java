@@ -20,6 +20,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import br.com.jordilucas.pontointeligente.api.enums.PerfilEnum;
 
@@ -73,6 +74,7 @@ public class Funcionario implements Serializable{
 		return valorHora;
 	}
 	
+	@Transient
 	public Optional<BigDecimal> getValorHoraOpt(){
 		return Optional.ofNullable(valorHora);
 	}
@@ -82,6 +84,7 @@ public class Funcionario implements Serializable{
 		return qtdHorasTrabalhoDia;
 	}
 	
+	@Transient
 	public Optional<Float> getQtdHorasTrabalhoDiaOpt(){
 		return Optional.ofNullable(qtdHorasTrabalhoDia);
 	}
@@ -91,6 +94,7 @@ public class Funcionario implements Serializable{
 		return qtdHorasAlmoco;
 	}
 	
+	@Transient
 	public Optional<Float> getQtdHorasAlmocoOpt(){
 		return Optional.ofNullable(qtdHorasAlmoco);
 	}
