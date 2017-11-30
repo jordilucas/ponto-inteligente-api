@@ -1,4 +1,4 @@
-package br.com.jordilucas.pontointeligente.repositories;
+package br.com.jordilucas.pontointeligente.api.repositories;
 
 import static org.junit.Assert.assertEquals;
 
