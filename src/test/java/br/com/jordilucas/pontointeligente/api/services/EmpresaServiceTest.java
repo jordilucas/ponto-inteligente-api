@@ -1,5 +1,8 @@
 package br.com.jordilucas.pontointeligente.api.services;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import java.util.Optional;
 
 import org.junit.Before;
@@ -41,6 +44,15 @@ public class EmpresaServiceTest {
 	public void testBuscarEmpresaPorCnpj() {
 		
 		Optional<Empresa> empresa = this.empresaService.buscarPorCnpj(CNPJ);
+		assertTrue(empresa.isPresent());
+		
+	}
+	
+	@Test
+	public void testPersistirEmpresa() {
+		
+		Empresa empresa = this.empresaService.persistir(new Empresa());
+		assertNotNull(empresa);
 		
 	}
 	
