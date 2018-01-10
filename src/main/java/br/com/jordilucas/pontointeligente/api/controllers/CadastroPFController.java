@@ -63,7 +63,7 @@ public class CadastroPFController {
 		if(result.hasErrors()) {
 			log.error("Error validando dados de cadastro PF: {}", result.getAllErrors());
 			result.getAllErrors().forEach(error -> response.getErrors().add(error.getDefaultMessage()));
-		return ResponseEntity.badRequest().body(response);
+			return ResponseEntity.badRequest().body(response);
 		}
 		
 		Optional<Empresa> empresa = this.empresaService.buscarPorCnpj(cadastroPFDto.getCnpj());
